@@ -13,22 +13,32 @@ This project demonstrates simple network communication protocols between nodes i
   - Length of message (bytes)
 
 It order to simulate the network environment, I used Docker to create containers to serve as my server and client nodes. Please see the Compiling Instructions for steps on how to recreate this demo. 
- 
 
-## Compiling Instructions
-All these commands should be executed in your CLI
-    *the following commands were run on Mac iOS but should remian the same for other OS*
 
-    1.  Install and open the directory for this project
-        ```bash
-        cd BroadcastMulticast
-        ```
-    2. Build the docker images and run the containers using the docker-compose.yml
-        ```bash
-        docker-compose up --build
-        ```
-    3. After running the demo, terminate the previous containers using:
-        ```bash
-        docker-compose down
-        ```
-    Note: You may be prompted to login to your Docker account, if so then use the command: docker login
+## Compiling and Testing Instructions
+    
+1. Ensure the following files are located in the same file directory: 
+    
+            - client.py
+            - master.py
+            - Dockerfile_client
+            - Dockerfile_master
+            - docker-compose.yml
+
+(Note: Files must be named exactly as seen above.)
+
+2. Make sure the current working directory of the terminal is set to where all the files are located.
+
+            cd [folder_name]
+
+3. Login to Docker using the command:
+
+            sudo docker login 
+
+4. Build the Docker images and run the containers by running the command:
+
+            sudo docker-compose up --build
+
+5. Terminate and remove the containers and network with the command: 
+
+            sudo docker-compose down
